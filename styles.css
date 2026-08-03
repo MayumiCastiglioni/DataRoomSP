@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap");
+
 :root {
-  --paper: #f7f4ef;
-  --ink: #17171f;
-  --charcoal: #4b4a50;
+  --paper: #f7f6f2;
+  --ink: #1a1a1f;
+  --charcoal: #3c3c41;
   --night: #171820;
-  --orange: #e59a32;
+  --orange: #d8903b;
+  --gold: #c4a35a;
   --line: #c9c6c1;
   --muted: #6a686b;
   --white: #fffdfa;
@@ -14,10 +17,10 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; line-height: 1.52; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, Arial, Helvetica, sans-serif; line-height: 1.6; }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
-h1, h2, h3, h4, .brand, .number { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+h1, h2, h3, h4, .brand, .number { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; }
 h1, h2, h3, h4, p { margin-top: 0; }
 h1 { font-size: clamp(2.6rem, 6vw, 5.4rem); line-height: .98; letter-spacing: -.045em; }
 h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.03; letter-spacing: -.035em; }
@@ -26,7 +29,7 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.1; }
 .site-header { min-height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); background: var(--paper); }
 .header-inner { width: min(1180px, calc(100% - 64px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .brand { font-size: 1.65rem; text-decoration: none; white-space: nowrap; }
-.site-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px; font-size: .77rem; font-weight: 700; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px; font-family: Inter, Arial, sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .site-nav a { text-decoration: none; padding: 5px 0; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -52,8 +55,11 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.1; }
 .hero-subtitle { color: var(--muted); font-weight: 700; }
 
 .dark-band { color: var(--white); background: var(--charcoal); }
+.dark-band.gold-frame { border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
+.dark-band h2 { color: var(--white); margin-bottom: 22px; }
 .dark-band .body-copy, .dark-band .section-title small { color: #f0ede7; }
 .dark-band a { color: var(--white); }
+.dark-band .container.narrow { max-width: 900px; }
 .dark-card .body-copy, .mission-card .body-copy { color: #f0ede7; }
 .mission-card { padding: 40px; color: var(--white); background: var(--charcoal); }
 .fundacao-hero { position: relative; min-height: 480px; display: grid; place-items: center; overflow: hidden; color: var(--white); background: var(--charcoal); }
@@ -91,8 +97,11 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.1; }
 .split-wide { display: grid; grid-template-columns: 1.2fr .8fr; gap: 68px; align-items: center; }
 .split.reverse > :first-child { order: 2; }
 .story-photo { min-width: 0; margin: 0; overflow: hidden; background: #d7d7d7; }
-.story-photo img { width: 100%; height: 360px; object-fit: contain; background: #d7d7d7; }
+.story-photo img { width: 100%; height: 360px; object-fit: cover; background: #d7d7d7; }
+.story-photo.circle { width: min(100%, 340px); margin-inline: auto; border-radius: 50%; }
+.story-photo.circle img { height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; }
 .story-photo figcaption, .gallery-item figcaption { padding: 9px 11px; color: var(--muted); background: var(--paper); font-size: .68rem; overflow-wrap: anywhere; }
+.story-section h2 { margin-bottom: 22px; }
 .photo-placeholder, .image-placeholder { min-height: 280px; background: linear-gradient(135deg, #d8d5cf, #b8b6b4 47%, #77757a 48%, #4b4a50); }
 .photo-placeholder.tall { min-height: 430px; }
 .photo-placeholder.warm { background: linear-gradient(145deg, #d8a354, #8e5c2d 45%, #3e3430); }
